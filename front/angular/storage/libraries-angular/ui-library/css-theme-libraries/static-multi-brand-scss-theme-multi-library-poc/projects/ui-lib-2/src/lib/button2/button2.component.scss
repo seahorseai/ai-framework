@@ -1,0 +1,7 @@
+// button.component.scss
+@use '../../themes/_brand-a' as theme;
+
+button {
+  background-color: theme.$primary-color;
+  font-family: theme.$font-family;
+}

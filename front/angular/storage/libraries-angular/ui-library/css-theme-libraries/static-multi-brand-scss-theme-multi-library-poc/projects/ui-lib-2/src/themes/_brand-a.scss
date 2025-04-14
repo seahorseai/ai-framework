@@ -1,0 +1,5 @@
+// _brand-a.scss
+@forward '_variables' with (
+  $primary-color: #ff5733,
+  $font-family: ('Open Sans', sans-serif)
+);

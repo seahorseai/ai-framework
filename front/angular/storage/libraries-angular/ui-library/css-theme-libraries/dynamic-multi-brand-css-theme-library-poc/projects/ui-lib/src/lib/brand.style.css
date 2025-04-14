@@ -1,0 +1,19 @@
+
+
+:root, :root.brand-a {
+  /* Brand A variables */
+  --brand-a-primary: #1e88e5;
+  --brand-a-primary-hover: #1976d2;
+  --brand-a-secondary: #e0e0e0;
+  --brand-a-secondary-hover: #d5d5d5;
+  --brand-a-text: #212121;
+}
+
+:root.brand-b {
+  /* Brand B variables */
+  --brand-b-primary: #6200ea;
+  --brand-b-primary-hover: #5600e8;
+  --brand-b-secondary: #ff4081;
+  --brand-b-secondary-hover: #f50057;
+  --brand-b-text: #212121;
+}

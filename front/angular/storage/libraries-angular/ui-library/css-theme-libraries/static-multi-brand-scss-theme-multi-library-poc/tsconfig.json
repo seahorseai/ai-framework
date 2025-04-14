@@ -9,11 +9,6 @@
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "paths": {
-      "lib-1": [
-        "./dist/lib-1"
-      ]
-    },
     "skipLibCheck": true,
     "isolatedModules": true,
     "esModuleInterop": true,
@@ -27,7 +22,15 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ui-lib": [
+        "./dist/ui-lib"
+      ],
+      "ui-lib-2": [
+        "./dist/ui-lib-2"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

@@ -1,5 +1,5 @@
 {
-  "name": "library-angular-2-poc",
+  "name": "multi-brand-library-standalone",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
