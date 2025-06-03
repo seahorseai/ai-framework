@@ -8,7 +8,11 @@ from langgraph.prebuilt import create_react_agent
 load_dotenv()
 
 # Initialize the language model
-llm = ChatOpenAI(openai_api_key=os.getenv("OPENAI_API_KEY"), model="gpt-4", temperature=0)
+llm = ChatOpenAI(
+    openai_api_key=os.getenv("OPENAI_API_KEY"),
+    model="gpt-4",
+    temperature=0
+)
 
 # Define a custom tool
 @tool
@@ -16,9 +20,10 @@ def multiply(a: int, b: int) -> int:
     """Multiply two integers together."""
     return a * b
 
+# List of tools
 tools = [multiply]
 
-# Create the agent
+# Create the ReAct agent
 agent = create_react_agent(
     model=llm,
     tools=tools,
@@ -30,4 +35,7 @@ response = agent.invoke(
     {"messages": [{"role": "user", "content": "What is 6 multiplied by 7?"}]}
 )
 
-print(response)
+# Extract and print the final assistant message
+final_message = response["messages"][-1]
+print(final_message.content)
+
