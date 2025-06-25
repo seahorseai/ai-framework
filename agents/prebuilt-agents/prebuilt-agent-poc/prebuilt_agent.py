@@ -1,9 +1,14 @@
 # prebuilt_agent.py
+
+
+from langchain_openai import ChatOpenAI
+
+from langgraph.prebuilt import create_react_agent
+
+from langchain_core.tools import tool
+
 import os
 from dotenv import load_dotenv
-from langchain_openai import ChatOpenAI
-from langgraph.prebuilt import create_react_agent
-from langchain_core.tools import tool
 
 # Load environment variables from .env file
 load_dotenv()
@@ -26,7 +31,7 @@ def reverse_string(text: str) -> str:
 
 # Create the ReAct agent
 agent = create_react_agent(
-    llm,
+    model=llm,
     tools=[reverse_string],
     prompt="You are a witty assistant that can reverse words when asked. Use tools if needed."
 )
