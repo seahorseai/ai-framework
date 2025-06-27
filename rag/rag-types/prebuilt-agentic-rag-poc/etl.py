@@ -1,4 +1,4 @@
-# agentic-rag.py
+# etl.py
 
 import os
 from dotenv import load_dotenv
@@ -25,7 +25,7 @@ with open("state_of_the_union.txt", "w") as f:
     a better future for our children and grandchildren.
     """)
 
-# 1️⃣ Load and split documents
+# Load and split documents
 loader = TextLoader("state_of_the_union.txt")
 documents = loader.load()
 text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
@@ -34,4 +34,3 @@ texts = text_splitter.split_documents(documents)
 # Embeddings and vectorstore
 embeddings = OpenAIEmbeddings(openai_api_key=OPENAI_API_KEY)
 vectorstore = FAISS.from_documents(texts, embeddings)
-retriever = vectorstore.as_retriever()

@@ -2,9 +2,7 @@
 
 
 from langchain_openai import ChatOpenAI
-
 from langgraph.prebuilt import create_react_agent
-
 from langchain_core.tools import tool
 
 import os

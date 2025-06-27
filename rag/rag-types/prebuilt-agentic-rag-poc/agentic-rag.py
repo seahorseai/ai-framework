@@ -7,9 +7,11 @@ from dotenv import load_dotenv
 from langchain.tools.retriever import create_retriever_tool
 from langchain_openai import ChatOpenAI
 
-from etl import retriever
+from etl import vectorstore
 
-# 🔁 Import LangGraph create_react_agent
+retriever = vectorstore.as_retriever()
+
+# Import LangGraph create_react_agent
 from langgraph.prebuilt import create_react_agent
 import langchain
 langchain.verbose = True  # enable debug logs
@@ -30,7 +32,7 @@ retriever_tool = create_retriever_tool(
 # Define LLM
 llm = ChatOpenAI(model="gpt-4o", api_key=OPENAI_API_KEY)
 
-# 🔁 Create the agent using LangGraph's create_react_agent
+# Create the agent using LangGraph's create_react_agent
 agent_runnable = create_react_agent(llm, [retriever_tool])
 
 # Run query
