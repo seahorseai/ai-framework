@@ -53,5 +53,5 @@ graph.add_edge("react_agent", END)
 
 # Compile and invoke
 app = graph.compile()
-result = app.invoke({"messages": [HumanMessage(content="What is the tallest building in the world right now?")]})
+result = app.invoke({"messages": [HumanMessage(content="What are the most popular places to visit in Spain?")]})
 print(result["messages"][-1].content)
