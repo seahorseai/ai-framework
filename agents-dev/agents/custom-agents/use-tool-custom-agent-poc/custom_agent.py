@@ -1,10 +1,9 @@
 # custom_agent.py
-from langgraph.graph import MessagesState, StateGraph, START
+from langgraph.graph import MessagesState, StateGraph, START, END
 from langchain_core.messages import SystemMessage, HumanMessage, ToolMessage
 from langchain_openai import ChatOpenAI
 from langchain_core.tools import tool
 from typing import Literal
-from langgraph.graph.state import END
 import os
 from dotenv import load_dotenv
 
